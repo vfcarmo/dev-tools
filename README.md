@@ -23,6 +23,12 @@ Dev-tools requires [Docker] and [Docker-Compose] to run.
 
 The installation of each dependency is not covered here. You can see how to install them on their official site.
 
+Dev-tools need to be cloned on GitHub.
+```sh
+$ git clone git@github.com:vfcarmo/dev-tools.git
+$ cd dev-tools
+```
+
 ### Run a tool
 To perform any dev-tools, you need to access the specific directory and type docker-compose up, as the example bellow:
 
