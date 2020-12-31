@@ -1,0 +1,29 @@
+version: '3'
+
+services:
+  dev-tools-postgres:
+    image: postgres
+    environment:
+      POSTGRES_PASSWORD: "Postgres@2021"
+    ports:
+      - "15432:5432"
+    volumes:
+      - ~/Dev/Docker-Compose/PostgreSQL:/var/lib/postgresql/data 
+    networks:
+      - dev-tools-postgres-network
+      
+  dev-tools-pgadmin:
+    image: dpage/pgadmin4
+    environment:
+      PGADMIN_DEFAULT_EMAIL: "vfcarmo@gmail.com"
+      PGADMIN_DEFAULT_PASSWORD: "PgAdmin@2020"
+    ports:
+      - "16543:80"
+    depends_on:
+      - dev-tools-postgres
+    networks:
+      - dev-tools-postgres-network
+
+networks: 
+  dev-tools-postgres-network:
+    driver: bridge

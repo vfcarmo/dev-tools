@@ -1,0 +1,25 @@
+version: '3'
+
+services:
+  dev-tools-mysql:
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: "MySql@2021"
+      MYSQL_DATABASE: "db"
+    ports:
+      - "3306:3306"
+    volumes:
+      - ~/Dev/Docker-Compose/MySql:/var/lib/mysql
+    networks:
+      - dev-tools-mysql-network
+
+  dev-tools-adminer:
+    image: adminer
+    ports:
+      - 8080:8080
+    networks:
+      - dev-tools-mysql-network
+
+networks: 
+  dev-tools-mysql-network:
+    driver: bridge
