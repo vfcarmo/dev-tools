@@ -42,7 +42,7 @@ To stop any dev-tools, you need to access the specific directory and type docker
 
 ```sh
 $ cd MongoDB
-$ docker-compose down -d
+$ docker-compose down
 ```
 
 ### Todos
